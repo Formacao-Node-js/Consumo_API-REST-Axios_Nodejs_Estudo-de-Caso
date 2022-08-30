@@ -1,0 +1,25 @@
+{
+  "name": "api-rest-axios-nodejs",
+  "version": "1.0.0",
+  "description": "estudo de consumo de api com axios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Formacao-Node-js/Consumo_API-REST-Axios_Nodejs_Estudo-de-Caso.git"
+  },
+  "author": "Vinícius Soares/KyuaKun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Formacao-Node-js/Consumo_API-REST-Axios_Nodejs_Estudo-de-Caso/issues"
+  },
+  "homepage": "https://github.com/Formacao-Node-js/Consumo_API-REST-Axios_Nodejs_Estudo-de-Caso#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
