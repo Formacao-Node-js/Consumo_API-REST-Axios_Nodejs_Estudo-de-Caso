@@ -25,8 +25,8 @@ const Games = connection.define("jogos", {
   },
 });
 
-Pergunta.sync({ force: false }).then(() => {
-  console.log('Tabeal "Games" criada.');
+Games.sync({ force: false }).then(() => {
+  console.log('Tabela "Games" criada.');
 });
 
 module.exports = Games;

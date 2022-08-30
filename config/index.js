@@ -1,7 +1,7 @@
 module.exports = {
   dialect: "mysql",
   host: "localhost",
-  usernam: "root",
+  username: "root",
   password: "vinicius2304",
   database: "steam",
 };
