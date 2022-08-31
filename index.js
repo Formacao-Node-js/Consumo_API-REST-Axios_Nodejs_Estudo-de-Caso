@@ -27,21 +27,22 @@ app.get("/games", async (req, res) => {
   res.send(response);
 });
 
+app.get("/game/:id", async (req, res) => {
+  const id = req.params.id;
+  if (isNaN(id)) {
+    return res.status(400).json({
+      causa: "O id passado é do tipo texto",
+      solucao: "O id deve ser do tipo número",
+    });
+  }
+  const response = await Games.findOne({
+    where: { id },
+  });
+  res.send(response);
+});
+
 app.post("/post/game", async (req, res) => {
   const { title, price, year } = req.body;
-  // if (!title && !price && !year) {
-  //   return res.status(400).json({
-  //     causa: "Nenhum dos campos podem ser vazios",
-  //     solucao: "Preencha os campos corretamente",
-  //   });
-  // }
-
-  // if (!title) {
-  // }
-  // if (!price) {
-  // }
-  // if (!year) {
-  // }
 
   const reqField = ["title", "price", "year"];
 
