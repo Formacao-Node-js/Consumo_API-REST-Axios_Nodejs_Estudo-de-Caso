@@ -1,4 +1,4 @@
-const { json } = require("express");
+const { json, response } = require("express");
 const express = require("express");
 const cors = require("cors");
 const connection = require("./database/index");
@@ -99,6 +99,25 @@ app.put("/attgame/:id", async (req, res) => {
     response.year = year;
     await response.save();
   }
+
+  res.status(200).json({
+    operacao: "Tabela atualizada com sucesso.",
+  });
+});
+
+app.delete("/game/:id", async (req, res) => {
+  const id = req.params.id;
+  if (isNaN(id)) {
+    return res.status(400).json({
+      causa: "O campo preço passado é do tipo texto",
+      solucao: "O campo preço deve ser do tipo número",
+    });
+  }
+
+  const response = await Games.findOne({
+    where: { id },
+  });
+  await response.destroy();
 
   res.status(200).json({
     operacao: "Tabela atualizada com sucesso.",
