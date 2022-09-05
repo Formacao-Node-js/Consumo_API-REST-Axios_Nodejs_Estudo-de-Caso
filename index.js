@@ -1,4 +1,4 @@
-const { json, response } = require("express");
+const { json } = require("express");
 const express = require("express");
 const cors = require("cors");
 const connection = require("./database/index");
